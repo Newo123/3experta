@@ -96,17 +96,22 @@ function initHeroSlider() {
          if (previousSlide) {
             const prevTitle = previousSlide.querySelector('.hero__title');
             const prevSubtitle = previousSlide.querySelector('.hero__subtitle');
+            const prevButton = previousSlide.querySelector('.hero__buttons');
+
             if (prevTitle) prevTitle.style.opacity = 0;
             if (prevSubtitle) prevSubtitle.style.opacity = 0;
+            if (prevButton) prevButton.style.opacity = 0;
          }
 
          if (currentSlide) {
             const title = currentSlide.querySelector('.hero__title');
             const subtitle = currentSlide.querySelector('.hero__subtitle');
+            const button = currentSlide.querySelector('.hero__buttons');
 
             if (title) {
                title.style.opacity = 0;
                title.style.transform = 'translateY(20px)';
+
                setTimeout(() => {
                   title.style.transition = 'all 0.6s ease';
                   title.style.opacity = 1;
@@ -117,11 +122,23 @@ function initHeroSlider() {
             if (subtitle) {
                subtitle.style.opacity = 0;
                subtitle.style.transform = 'translateY(20px)';
+
                setTimeout(() => {
                   subtitle.style.transition = 'all 0.6s ease';
                   subtitle.style.opacity = 1;
                   subtitle.style.transform = 'translateY(0)';
                }, 200);
+            }
+
+            if (button) {
+               button.style.opacity = 0;
+               button.style.transform = 'translateY(20px)';
+
+               setTimeout(() => {
+                  button.style.transition = 'all 0.6s ease';
+                  button.style.opacity = 1;
+                  button.style.transform = 'translateY(0)';
+               }, 300);
             }
          }
       });
@@ -624,5 +641,4 @@ document.addEventListener('DOMContentLoaded', () => {
    initFaqAccordion();
    moveRequestAdv();
    initHeaderScroll();
-
 })

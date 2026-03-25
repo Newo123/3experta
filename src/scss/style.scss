@@ -222,6 +222,20 @@ Home
       }
    }
 
+   &__buttons {
+      justify-content: flex-start;
+      margin-top: 20px;
+      position: relative;
+      z-index: 6;
+      @media (width < 767px) {
+         & {
+            .btn {
+               padding: 12px 30px;
+            }
+         }
+      }
+   }
+
    .slider-pagination {
       width: 50vw;
       z-index: 5;
