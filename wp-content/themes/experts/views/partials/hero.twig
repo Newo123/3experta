@@ -1,0 +1,100 @@
+{% if hero.slider %}
+
+	<section class="hero">
+		<div class="hero__body container">
+			<div class="hero__button">
+				<button type="button" class="btn open-popup" data-popup="request-popup">Заказать звонок</button>
+			</div>
+			<div class="hero__content">
+
+				<div class="hero__main">
+					{% if hero.text %}
+						<div class="hero__name">{{ hero.text }}</div>
+					{% endif %}
+					<div class="hero__slider swiper">
+						<div class="swiper-wrapper">
+							{% for item in hero.slider %}
+								<div class="hero__slide swiper-slide">
+									<h2 class="hero__title">
+										{{ item.title }}
+									</h2>
+									<div class="hero__subtitle">{{ item.subtitle }}
+									</div>
+									<div class="hero__buttons">
+										<button type="button" class="btn open-popup" data-popup="request-popup">Пройти бесплатный аудит</button>
+									</div>
+								</div>
+							{% endfor %}
+						</div>
+						<div class="hero__pagination slider-pagination"></div>
+					</div>
+
+				</div>
+
+				<div class="hero__request">
+					<form class="hero__request-form">
+						<div class="hero__request-form-item">
+							<div class="hero__request-form-label">Имя</div>
+							<div class="hero__request-form-area">
+								<input type="text" name="name" autocomplete="name" placeholder="Имя" required>
+								<svg class="hero__request-form-icon">
+									<use xlink:href="{{ theme.link }}/assets/img/icons/icons.svg#icon-user"></use>
+								</svg>
+							</div>
+						</div>
+						<div class="hero__request-form-item">
+							<div class="hero__request-form-label">Номер телефона</div>
+							<div class="hero__request-form-area">
+								<input type="text" name="phone" class="tel-mask" autocomplete="tel" placeholder="Номер телефона" required>
+								<svg class="hero__request-form-icon">
+									<use xlink:href="{{ theme.link }}/assets/img/icons/icons.svg#icon-phone-2"></use>
+								</svg>
+							</div>
+						</div>
+						<div class="hero__request-form-agree">
+							<label class="agree">
+								<input type="checkbox" name="policy" value="agree" required>
+								<span class="agree__box"></span>
+								<span class="agree__text">
+									Я соглашаюсь с
+									<a href="">Политикой конфиденшиальности</a>
+									и даю согласие
+																																																																																																																																																																																																	                      на
+									<a href="">обработку персональных данных</a>
+								</span>
+							</label>
+						</div>
+						<div class="hero__request-form-footer">
+							<div class="hero__request-form-actions">
+								<button type="submit" class="btn">Получить бесплатную консультацию</button>
+								<a href="" class="hero__request-link" aria-label="telegram">
+									<svg>
+										<use xlink:href="{{ theme.link }}/assets/img/icons/icons.svg#icon-telegram"></use>
+									</svg>
+								</a>
+							</div>
+						</div>
+					</form>
+					<div class="hero__request-adv">
+						<div class="hero__request-adv-item">
+							<picture>
+								<source media="(max-width: 767px)" srcset="{{ theme.link }}/assets/img/icons/check-oct-gold.svg">
+								<img src="{{ theme.link }}/assets/img/icons/guarantee.svg" width="16" height="16" alt="icon">
+							</picture>
+							Сертифицированные налоговые специалисты
+						</div>
+						<div class="hero__request-adv-item">
+							<picture>
+								<source media="(max-width: 767px)" srcset="{{ theme.link }}/assets/img/icons/check-oct-gold.svg">
+								<img src="{{ theme.link }}/assets/img/icons/guarantee.svg" width="16" height="16" alt="icon">
+							</picture>
+							100% Безопасно
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<div class="particles-js"></div>
+	</section>
+{% endif %}

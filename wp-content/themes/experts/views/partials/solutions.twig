@@ -1,0 +1,32 @@
+{% if solutions.items %}
+	<section class="solutions">
+		<div class="solutions__body container section-padding">
+			<h2 class="solutions__title section-title">{{ solutions.title }}</h2>
+			<div class="solutions__subtitle section-subtitle">{{ solutions.subtitle }}</div>
+			<div class="solutions__cards">
+				{% for item in solutions.items %}
+					<div class="solutions__card">
+						<div class="solutions__card-top">
+							<div class="solutions__card-title">{{ item.title }}</div>
+							<div class="solutions__card-descr">
+								{{ item.text }}
+							</div>
+						</div>
+						<div class="solutions__card-bottom">
+							<div class="solutions__card-label">
+								<img src="{{ theme.link }}/assets/img/icons/shield-check.svg" width="25" height="25" alt="icon">
+								Решение
+							</div>
+							<div class="solutions__card-text">
+								{{ item.solution }}
+							</div>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+			<div class="solutions__button">
+				<button type="button" class="btn">Разобрать мой случай</button>
+			</div>
+		</div>
+	</section>
+{% endif %}

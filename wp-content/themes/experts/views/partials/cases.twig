@@ -1,0 +1,50 @@
+{% if cases_posts %}
+	<section class="cases">
+		<div class="cases__body container section-padding">
+			<h2 class="cases__title section-title">{{ cases.title }}</h2>
+			<div class="cases__subtitle section-subtitle">{{ cases.subtitle }}</div>
+			<div class="cases__content">
+				<div class="cases__slider swiper">
+					<div class="swiper-wrapper">
+						{% for item in cases_posts %}
+							<div class="case__slide swiper-slide">
+								<div class="case__slide-wrapper">
+									<div class="case__slide-head">
+										{{ item.title }}
+									</div>
+									<div class="case__slide-main">
+
+										{% if item.cases_announ.description %}
+											<div class="case__slide-descr">
+												{{ item.cases_announ.description }}
+											</div>
+										{% endif %}
+
+										<div class="case__slide-solution">
+											<img src="{{ theme.link }}/assets/img/icons/shield-check.svg" width="24" height="24" alt="icon">
+											Решение
+										</div>
+
+										{% if item.cases_announ.solution %}
+											<div class="case__slide-text">
+												{{ item.cases_announ.solution }}
+											</div>
+										{% endif %}
+
+										{% if item.cases_announ.label %}
+											<div class="case__slide-label">
+												{{ item.cases_announ.label }}
+											</div>
+										{% endif %}
+
+									</div>
+								</div>
+							</div>
+						{% endfor %}
+					</div>
+				</div>
+				<div class="cases__pagination slider-pagination"></div>
+			</div>
+		</div>
+	</section>
+{% endif %}

@@ -1,0 +1,30 @@
+{% if founder.name %}
+	<section class="founder">
+		<div class="founder__body container">
+
+			{% if founder.image %}
+				<div class="founder__image">
+					<img src="{{ founder.image.sizes.large }}" width="500" height="500" alt="founder">
+				</div>
+			{% endif %}
+
+			<div class="founder__info">
+
+				{% if founder.name %}
+					<div class="founder__name">{{ founder.name }}</div>
+				{% endif %}
+
+				{% if founder.role %}
+					<div class="founder__role">{{ founder.role }}</div>
+				{% endif %}
+
+				{% if founder.content %}
+					<div class="founder__text">
+						{{ founder.content }}
+					</div>
+				{% endif %}
+
+			</div>
+		</div>
+	</section>
+{% endif %}

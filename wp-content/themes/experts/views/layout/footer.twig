@@ -1,0 +1,171 @@
+<footer class="footer">
+	<div class="footer__body container">
+		<div class="footer__main">
+			<div class="footer__info">
+				<div class="footer__logo">
+					<img src="{{ header_logo_brand }}" width="392" height="90" alt="logo">
+				</div>
+				<div class="footer__about">
+					Комплексное сопровождение бизнеса в вопросах налогов и права.
+																																																																																																																																																						              Помогаем предпринимателям снижать налоговые риски и выстраивать безопасную финансовую модель.
+				</div>
+				<div class="footer__copy">
+					&copy;
+					{{ "now"|date("Y") }}
+					Шатилов Консалтинг.
+					<br>
+					Все права защищены.
+				</div>
+				{% if socials %}
+					<div class="footer__socials">
+						{% for item in socials %}
+							<a href="{{ item.link.url }}" class="footer__social" aria-label="{{ item.link.title }}">
+								<img src="{{ item.icon }}" width="49" height="49" alt="{{ item.link.title }}">
+							</a>
+						{% endfor %}
+					</div>
+				{% endif %}
+			</div>
+
+			<nav class="footer__menu">
+				{% if footer_menu %}
+					<div class="footer__menu-col">
+						<div class="footer__menu-name">Навигация</div>
+						<ul class="footer__menu-list">
+							{% for item in footer_menu.items %}
+								<li>
+									<a href="{{ item.url }}" class="footer__link">{{ item.title }}</a>
+								</li>
+							{% endfor %}
+						</ul>
+					</div>
+				{% endif %}
+
+				{% if service_menu %}
+					<div class="footer__menu-col">
+						<div class="footer__menu-name">Услуги</div>
+						<ul class="footer__menu-list">
+							{% for item in service_menu.items %}
+								<li>
+									<a href="{{ item.url }}" class="footer__link">{{ item.title }}</a>
+								</li>
+							{% endfor %}
+						</ul>
+					</div>
+				{% endif %}
+
+
+			</nav>
+
+			<div class="footer__contacts">
+				<div class="footer__menu-name">Контакты</div>
+				<div class="footer__contacts-items">
+					{% if phone %}
+						<a href="{{ phone.url }}" class="footer__contacts-item">
+							<img src="{{ theme.link }}/assets/img/icons/phone-circle.svg" width="28" height="28" alt="icon">
+							{{ phone.title }}
+						</a>
+					{% endif %}
+
+					{% if worktime %}
+						<div class="footer__contacts-item">
+							<img src="{{ theme.link }}/assets/img/icons/clock-circle.svg" width="28" height="28" alt="icon">
+							{{ worktime }}
+						</div>
+					{% endif %}
+
+					{% if email %}
+						<a href="{{ email.url }}" class="footer__contacts-item">
+							<img src="{{ theme.link }}/assets/img/icons/email.svg" width="28" height="28" alt="icon">
+							{{ email.title }}
+						</a>
+					{% endif %}
+
+					{% if location %}
+						<div class="footer__contacts-item">
+							<img src="{{ theme.link }}/assets/img/icons/location-circle.svg" width="28" height="28" alt="icon">
+							{{ location }}
+						</div>
+					{% endif %}
+
+				</div>
+			</div>
+			{% if socials %}
+
+				<div class="footer__socials -mob">
+					{% for item in socials %}
+						<a href="{{ item.link.url }}" class="footer__social" aria-label="{{ item.link.title }}">
+							<img src="{{ item.icon }}" width="49" height="49" alt="{{ item.link.title }}">
+						</a>
+					{% endfor %}
+				</div>
+			{% endif %}
+
+			<div class="footer__copy -mob">
+				&copy;
+				{{ "now"|date("Y") }}
+				Шатилов Консалтинг. Все права защищены.
+			</div>
+		</div>
+		<div class="footer__legal">
+			<div class="footer__legal-text">
+				<img src="{{ theme.link }}/assets/img/icons/check-oct.svg" width="25" height="25" alt="icon">
+				Сертифицированные налоговые специалисты
+			</div>
+			<div class="footer__legal-links">
+				<a href="">Политика конфиденциальности</a>
+				<a href="">Пользовательское соглашение</a>
+			</div>
+		</div>
+	</div>
+</footer>
+<!-- popup-->
+<div id="request-popup" class="request-popup popup" role="dialog" aria-modal="true">
+	<div class="request-popup__body popup__body">
+		<form class="hero__request-form">
+			<div class="hero__request-form-item">
+				<div class="hero__request-form-label">Ваше имя</div>
+				<div class="hero__request-form-area">
+					<input type="text" name="name" autocomplete="name" placeholder="Имя" required>
+					<svg class="hero__request-form-icon">
+						<use xlink:href="{{ theme.link }}/assets/img/icons/icons.svg#icon-user"></use>
+					</svg>
+				</div>
+			</div>
+			<div class="hero__request-form-item">
+				<div class="hero__request-form-label">Ваш номер телефона</div>
+				<div class="hero__request-form-area">
+					<input type="text" name="phone" class="tel-mask" autocomplete="tel" placeholder="Номер телефона" required>
+					<svg class="hero__request-form-icon">
+						<use xlink:href="{{ theme.link }}/assets/img/icons/icons.svg#icon-phone-2"></use>
+					</svg>
+				</div>
+			</div>
+			<div class="hero__request-form-agree">
+				<label class="agree">
+					<input type="checkbox" name="policy" value="agree" required>
+					<span class="agree__box"></span>
+					<span class="agree__text">
+						Я соглашаюсь с
+						<a href="">Политикой конфиденшиальности</a>
+						и даю согласие
+																																																																																																																																																																																				                на
+						<a href="">обработку персональных данных</a>
+					</span>
+				</label>
+			</div>
+			<div class="hero__request-form-footer">
+				<div class="hero__request-form-actions">
+					<button type="submit" class="btn">Заказать звонок</button>
+				</div>
+			</div>
+		</form>
+		<div class="request-popup__close popup__close">
+			<svg>
+				<use xlink:href="{{ theme.link }}/assets/img/icons/icons.svg#icon-close"></use>
+			</svg>
+		</div>
+	</div>
+</div>
+
+{{ function('wp_footer') }}
