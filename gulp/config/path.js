@@ -14,7 +14,7 @@ export const path = {
       html: `${buildFolder}/`,
       images: `${buildFolder}/img/`,
       fonts: `${buildFolder}/fonts/`,
-      files: `${buildFolder}/files/`
+      files: `${buildFolder}/js/`
    },
    src: {
       js: `${srcFolder}/js/app.js`,

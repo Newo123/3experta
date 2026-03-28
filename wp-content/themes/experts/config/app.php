@@ -27,6 +27,10 @@ return [
     Rareloop\Lumberjack\Providers\SessionServiceProvider::class,
     Rareloop\Lumberjack\Providers\EncryptionServiceProvider::class,
 
+    // Installed
+    Rareloop\Lumberjack\Email\EmailServiceProvider::class,
+    Rareloop\Lumberjack\Validation\ValidationServiceProvider::class,
+
     // Application Providers
     App\Providers\AppServiceProvider::class,
     App\Providers\ThemeServiceProvider::class,

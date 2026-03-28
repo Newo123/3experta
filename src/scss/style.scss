@@ -19,7 +19,11 @@ $maxWidthContainer: 1280;
    --font-size-base: 16px;
    --font-line-height: 140%;
 }
-
+button[type="submit"]:disabled {
+  opacity: .7 !important;
+   cursor: not-allowed !important;
+  pointer-events: none !important; 
+}
 /*==========================================================================
 Templates
 ============================================================================*/

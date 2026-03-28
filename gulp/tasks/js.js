@@ -1,4 +1,4 @@
-import webpack from "webpack-stream";
+import webpack from "webpack-stream"
 
 
 export const js = () => {

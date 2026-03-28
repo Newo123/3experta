@@ -149,6 +149,12 @@ Vars
   --font-line-height: 140%;
 }
 
+button[type=submit]:disabled {
+  opacity: 0.7 !important;
+  cursor: not-allowed !important;
+  pointer-events: none !important;
+}
+
 /*==========================================================================
 Templates
 ============================================================================*/

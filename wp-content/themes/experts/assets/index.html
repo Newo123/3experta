@@ -1,91 +1,88 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-  <meta name="format-detection" content="telephone=no">
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" sizes="16x16" href="img/fav/favicon-16x16.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="img/fav/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="img/fav/android-chrome-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="img/fav/android-chrome-512x512.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="img/fav/apple-touch-icon.png">
-  <link rel="icon" type="image/x-icon" href="img/fav/favicon.ico">
-  <!--<meta name="msapplication-TileColor" content="#000000">
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+   <meta name="format-detection" content="telephone=no">
+   <!-- Favicon -->
+   <link rel="icon" type="image/png" sizes="16x16" href="img/fav/favicon-16x16.png">
+   <link rel="icon" type="image/png" sizes="32x32" href="img/fav/favicon-32x32.png">
+   <link rel="icon" type="image/png" sizes="192x192" href="img/fav/android-chrome-192x192.png">
+   <link rel="icon" type="image/png" sizes="512x512" href="img/fav/android-chrome-512x512.png">
+   <link rel="apple-touch-icon" sizes="180x180" href="img/fav/apple-touch-icon.png">
+   <link rel="icon" type="image/x-icon" href="img/fav/favicon.ico">
+   <!--<meta name="msapplication-TileColor" content="#000000">
    <meta name="theme-color" content="#000000">-->
-  <!-- Meta Description -->
-  <meta name="description" content="">
-  <meta property="og:title" content="">
-  <meta property="og:description" content="">
-  <meta property="og:url" content="">
-  <meta property="og:type" content="website">
-  <!-- Styles -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="css/style.min.css">
-  <title>Главная</title>
+   <!-- Meta Description -->
+   <meta name="description" content="">
+   <meta property="og:title" content="">
+   <meta property="og:description" content="">
+   <meta property="og:url" content="">
+   <meta property="og:type" content="website">
+   <!-- Styles -->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+   <link rel="stylesheet" href="css/style.min.css">
+   <title>Главная</title>
 </head>
 
 <body>
   <div class="wrapper">
-
-
     <header class="header">
-      <div class="header__body container">
-        <a href="" class="header__logo" aria-label="На главную">
-          <picture>
+   <div class="header__body container">
+      <a href="" class="header__logo" aria-label="На главную">
+         <picture>
             <source media="(max-width: 1200px)" srcset="img/logo-brand.png">
             <img src="img/logo.png" width="78" height="90" alt="Logo">
-          </picture>
-        </a>
-        <nav class="header__menu menu">
-          <div class="menu__icon"><span></span></div>
-          <div class="menu__body">
+         </picture>
+      </a>
+      <nav class="header__menu menu">
+         <div class="menu__icon"><span></span></div>
+         <div class="menu__body">
             <div class="menu__logo">
-              <img src="img/logo.png" width="78" height="90" alt="logo">
+               <img src="img/logo.png" width="78" height="90" alt="logo">
             </div>
             <div class="menu__btn">
-              <button type="button" class="btn open-popup" data-popup="request-popup">Заказать звонок</button>
+               <button type="button" class="btn open-popup" data-popup="request-popup">Заказать звонок</button>
             </div>
             <ul class="menu__list">
-              <li class="menu__item"><a href="" class="menu__link">Клиенты</a></li>
-              <li class="menu__item"><a href="" class="menu__link">Бизнес-решение</a></li>
-              <li class="menu__item"><a href="" class="menu__link">Услуги</a></li>
-              <li class="menu__item"><a href="" class="menu__link">Аудит</a></li>
-              <li class="menu__item"><a href="" class="menu__link">Процесс</a></li>
-              <li class="menu__item"><a href="" class="menu__link">Новости</a></li>
-              <li class="menu__item"><a href="" class="menu__link">Кейсы</a></li>
-              <li class="menu__item"><a href="" class="menu__link">Отзывы</a></li>
-              <li class="menu__item"><a href="" class="menu__link">FAQ</a></li>
-              <li class="menu__item"><a href="" class="menu__link">Гарантии</a></li>
+               <li class="menu__item"><a href="" class="menu__link">Клиенты</a></li>
+               <li class="menu__item"><a href="" class="menu__link">Бизнес-решение</a></li>
+               <li class="menu__item"><a href="" class="menu__link">Услуги</a></li>
+               <li class="menu__item"><a href="" class="menu__link">Аудит</a></li>
+               <li class="menu__item"><a href="" class="menu__link">Процесс</a></li>
+               <li class="menu__item"><a href="" class="menu__link">Новости</a></li>
+               <li class="menu__item"><a href="" class="menu__link">Кейсы</a></li>
+               <li class="menu__item"><a href="" class="menu__link">Отзывы</a></li>
+               <li class="menu__item"><a href="" class="menu__link">FAQ</a></li>
+               <li class="menu__item"><a href="" class="menu__link">Гарантии</a></li>
             </ul>
             <a href="tel:+79272447719" class="header__phone">
-              <svg>
-                <use xlink:href="img/icons/icons.svg#icon-phone"></use>
-              </svg>
-              +7 (927) 244-77-19
+               <svg>
+                  <use xlink:href="img/icons/icons.svg#icon-phone"></use>
+               </svg>
+               +7 (927) 244-77-19
             </a>
             <div class="menu__socials">
-              <a href="" class="menu__social" aria-label="telegram">
-                <img src="img/tg.svg" width="49" height="49" alt="telegram">
-              </a>
-              <a href="" class="menu__social" aria-label="whatsapp">
-                <img src="img/wa.svg" width="49" height="49" alt="whatsapp">
-              </a>
-              <a href="" class="menu__social" aria-label="vk">
-                <img src="img/vk.svg" width="49" height="49" alt="vk">
-              </a>
+               <a href="" class="menu__social" aria-label="telegram">
+                  <img src="img/tg.svg" width="49" height="49" alt="telegram">
+               </a>
+               <a href="" class="menu__social" aria-label="whatsapp">
+                  <img src="img/wa.svg" width="49" height="49" alt="whatsapp">
+               </a>
+               <a href="" class="menu__social" aria-label="vk">
+                  <img src="img/vk.svg" width="49" height="49" alt="vk">
+               </a>
             </div>
             <div class="menu__copyright">
-              © 2024 Шатилов Консалтинг. <br>
-              Все права защищены.
+               © 2024 Шатилов Консалтинг. <br>
+               Все права защищены.
             </div>
             <div class="particles-js"></div>
-          </div>
-        </nav>
-      </div>
-    </header>
+         </div>
+      </nav>
+   </div>
+</header>
     <main>
       <section class="hero">
         <div class="hero__body container">
@@ -1591,193 +1588,194 @@
       </section>
     </main>
     <footer class="footer">
-      <div class="footer__body container">
-        <div class="footer__main">
-          <div class="footer__info">
+   <div class="footer__body container">
+      <div class="footer__main">
+         <div class="footer__info">
             <div class="footer__logo">
-              <img src="img/logo-brand.png" width="392" height="90" alt="logo">
+               <img src="img/logo-brand.png" width="392" height="90" alt="logo">
             </div>
             <div class="footer__about">
-              Комплексное сопровождение бизнеса в вопросах налогов и права.
-              Помогаем предпринимателям снижать налоговые риски и выстраивать безопасную финансовую модель.
+               Комплексное сопровождение бизнеса в вопросах налогов и права.
+               Помогаем предпринимателям снижать налоговые риски и выстраивать безопасную финансовую модель.
             </div>
             <div class="footer__copy">
-              © 2024 Шатилов Консалтинг. <br>
-              Все права защищены.
+               © 2024 Шатилов Консалтинг. <br>
+               Все права защищены.
             </div>
             <div class="footer__socials">
-              <a href="" class="footer__social" aria-label="telegram">
-                <img src="img/tg.svg" width="49" height="49" alt="telegram">
-              </a>
-              <a href="" class="footer__social" aria-label="whatsapp">
-                <img src="img/wa.svg" width="49" height="49" alt="whatsapp">
-              </a>
-              <a href="" class="footer__social" aria-label="vk">
-                <img src="img/vk.svg" width="49" height="49" alt="vk">
-              </a>
+               <a href="" class="footer__social" aria-label="telegram">
+                  <img src="img/tg.svg" width="49" height="49" alt="telegram">
+               </a>
+               <a href="" class="footer__social" aria-label="whatsapp">
+                  <img src="img/wa.svg" width="49" height="49" alt="whatsapp">
+               </a>
+               <a href="" class="footer__social" aria-label="vk">
+                  <img src="img/vk.svg" width="49" height="49" alt="vk">
+               </a>
             </div>
-          </div>
+         </div>
 
-          <nav class="footer__menu">
+         <nav class="footer__menu">
             <div class="footer__menu-col">
-              <div class="footer__menu-name">Навигация</div>
-              <ul class="footer__menu-list">
-                <li>
-                  <a href="" class="footer__link">Наши клиенты</a>
-                </li>
-                <li>
-                  <a href="" class="footer__link">Бизнес-решения</a>
-                </li>
-                <li>
-                  <a href="" class="footer__link">Услуги</a>
-                </li>
-                <li>
-                  <a href="" class="footer__link">Аудит</a>
-                </li>
-                <li>
-                  <a href="" class="footer__link">Процесс работы</a>
-                </li>
-                <li>
-                  <a href="" class="footer__link">Кейсы</a>
-                </li>
-                <li>
-                  <a href="" class="footer__link">Новости</a>
-                </li>
-                <li>
-                  <a href="" class="footer__link">Отзывы</a>
-                </li>
-                <li>
-                  <a href="" class="footer__link">FAQ</a>
-                </li>
-                <li>
-                  <a href="" class="footer__link">Гарантии</a>
-                </li>
-              </ul>
+               <div class="footer__menu-name">Навигация</div>
+               <ul class="footer__menu-list">
+                  <li>
+                     <a href="" class="footer__link">Наши клиенты</a>
+                  </li>
+                  <li>
+                     <a href="" class="footer__link">Бизнес-решения</a>
+                  </li>
+                  <li>
+                     <a href="" class="footer__link">Услуги</a>
+                  </li>
+                  <li>
+                     <a href="" class="footer__link">Аудит</a>
+                  </li>
+                  <li>
+                     <a href="" class="footer__link">Процесс работы</a>
+                  </li>
+                  <li>
+                     <a href="" class="footer__link">Кейсы</a>
+                  </li>
+                  <li>
+                     <a href="" class="footer__link">Новости</a>
+                  </li>
+                  <li>
+                     <a href="" class="footer__link">Отзывы</a>
+                  </li>
+                  <li>
+                     <a href="" class="footer__link">FAQ</a>
+                  </li>
+                  <li>
+                     <a href="" class="footer__link">Гарантии</a>
+                  </li>
+               </ul>
             </div>
             <div class="footer__menu-col">
-              <div class="footer__menu-name">Услуги</div>
-              <ul class="footer__menu-list">
-                <li>
-                  <a href="" class="footer__link">Налоговый аудит</a>
-                </li>
-                <li>
-                  <a href="" class="footer__link">Налоговое планирование</a>
-                </li>
-                <li>
-                  <a href="" class="footer__link">Снижение налоговых рисков</a>
-                </li>
-                <li>
-                  <a href="" class="footer__link">Сопровождение проверок ФНС</a>
-                </li>
-                <li>
-                  <a href="" class="footer__link">Юридическое сопровождение бизнеса</a>
-                </li>
-                <li>
-                  <a href="" class="footer__link">Корпоративное право</a>
-                </li>
-                <li>
-                  <a href="" class="footer__link">Договорная работа</a>
-                </li>
-              </ul>
+               <div class="footer__menu-name">Услуги</div>
+               <ul class="footer__menu-list">
+                  <li>
+                     <a href="" class="footer__link">Налоговый аудит</a>
+                  </li>
+                  <li>
+                     <a href="" class="footer__link">Налоговое планирование</a>
+                  </li>
+                  <li>
+                     <a href="" class="footer__link">Снижение налоговых рисков</a>
+                  </li>
+                  <li>
+                     <a href="" class="footer__link">Сопровождение проверок ФНС</a>
+                  </li>
+                  <li>
+                     <a href="" class="footer__link">Юридическое сопровождение бизнеса</a>
+                  </li>
+                  <li>
+                     <a href="" class="footer__link">Корпоративное право</a>
+                  </li>
+                  <li>
+                     <a href="" class="footer__link">Договорная работа</a>
+                  </li>
+               </ul>
             </div>
-          </nav>
+         </nav>
 
-          <div class="footer__contacts">
+         <div class="footer__contacts">
             <div class="footer__menu-name">Контакты</div>
             <div class="footer__contacts-items">
-              <a href="tel:+79272447719" class="footer__contacts-item">
-                <img src="img/icons/phone-circle.svg" width="28" height="28" alt="icon">
-                +7 (927) 244-77-19
-              </a>
-              <div class="footer__contacts-item">
-                <img src="img/icons/clock-circle.svg" width="28" height="28" alt="icon">
-                Работаем ежедневно <br>
-                с 9:00 до 20:00
-              </div>
-              <a href="mailto:info@consulting.ru" class="footer__contacts-item">
-                <img src="img/icons/email.svg" width="28" height="28" alt="icon">
-                info@consulting.ru
-              </a>
-              <div class="footer__contacts-item">
-                <img src="img/icons/location-circle.svg" width="28" height="28" alt="icon">
-                Россия, Москва
-              </div>
+               <a href="tel:+79272447719" class="footer__contacts-item">
+                  <img src="img/icons/phone-circle.svg" width="28" height="28" alt="icon">
+                  +7 (927) 244-77-19
+               </a>
+               <div class="footer__contacts-item">
+                  <img src="img/icons/clock-circle.svg" width="28" height="28" alt="icon">
+                  Работаем ежедневно <br>
+                  с 9:00 до 20:00
+               </div>
+               <a href="mailto:info@consulting.ru" class="footer__contacts-item">
+                  <img src="img/icons/email.svg" width="28" height="28" alt="icon">
+                  info@consulting.ru
+               </a>
+               <div class="footer__contacts-item">
+                  <img src="img/icons/location-circle.svg" width="28" height="28" alt="icon">
+                  Россия, Москва
+               </div>
             </div>
-          </div>
+         </div>
 
-          <div class="footer__socials -mob">
+         <div class="footer__socials -mob">
             <a href="" class="footer__social" aria-label="telegram">
-              <img src="img/tg.svg" width="49" height="49" alt="telegram">
+               <img src="img/tg.svg" width="49" height="49" alt="telegram">
             </a>
             <a href="" class="footer__social" aria-label="whatsapp">
-              <img src="img/wa.svg" width="49" height="49" alt="whatsapp">
+               <img src="img/wa.svg" width="49" height="49" alt="whatsapp">
             </a>
             <a href="" class="footer__social" aria-label="vk">
-              <img src="img/vk.svg" width="49" height="49" alt="vk">
+               <img src="img/vk.svg" width="49" height="49" alt="vk">
             </a>
-          </div>
+         </div>
 
-          <div class="footer__copy -mob">
+         <div class="footer__copy -mob">
             © 2024 Шатилов Консалтинг. Все права защищены.
-          </div>
-        </div>
-        <div class="footer__legal">
-          <div class="footer__legal-text">
+         </div>
+      </div>
+      <div class="footer__legal">
+         <div class="footer__legal-text">
             <img src="img/icons/check-oct.svg" width="25" height="25" alt="icon">
             Сертифицированные налоговые специалисты
-          </div>
-          <div class="footer__legal-links">
+         </div>
+         <div class="footer__legal-links">
             <a href="">Политика конфиденциальности</a>
             <a href="">Пользовательское соглашение</a>
-          </div>
-        </div>
+         </div>
       </div>
-    </footer>
+   </div>
+</footer>
     <!-- popup-->
-    <div id="request-popup" class="request-popup popup" role="dialog" aria-modal="true">
-      <div class="request-popup__body popup__body">
-        <form class="hero__request-form">
-          <div class="hero__request-form-item">
+<div id="request-popup" class="request-popup popup" role="dialog" aria-modal="true">
+   <div class="request-popup__body popup__body">
+      <form class="hero__request-form">
+         <div class="hero__request-form-item">
             <div class="hero__request-form-label">Ваше имя</div>
             <div class="hero__request-form-area">
-              <input type="text" name="name" autocomplete="name" placeholder="Имя" required>
-              <svg class="hero__request-form-icon">
-                <use xlink:href="img/icons/icons.svg#icon-user"></use>
-              </svg>
+               <input type="text" name="name" autocomplete="name" placeholder="Имя" required>
+               <svg class="hero__request-form-icon">
+                  <use xlink:href="img/icons/icons.svg#icon-user"></use>
+               </svg>
             </div>
-          </div>
-          <div class="hero__request-form-item">
+         </div>
+         <div class="hero__request-form-item">
             <div class="hero__request-form-label">Ваш номер телефона</div>
             <div class="hero__request-form-area">
-              <input type="text" name="phone" class="tel-mask" autocomplete="tel" placeholder="Номер телефона" required>
-              <svg class="hero__request-form-icon">
-                <use xlink:href="img/icons/icons.svg#icon-phone-2"></use>
-              </svg>
+               <input type="text" name="phone" class="tel-mask" autocomplete="tel" placeholder="Номер телефона"
+                  required>
+               <svg class="hero__request-form-icon">
+                  <use xlink:href="img/icons/icons.svg#icon-phone-2"></use>
+               </svg>
             </div>
-          </div>
-          <div class="hero__request-form-agree">
+         </div>
+         <div class="hero__request-form-agree">
             <label class="agree">
-              <input type="checkbox" name="policy" value="agree" required>
-              <span class="agree__box"></span>
-              <span class="agree__text">
-                Я соглашаюсь с <a href="">Политикой конфиденшиальности</a> и даю согласие
-                на <a href="">обработку персональных данных</a>
-              </span>
+               <input type="checkbox" name="policy" value="agree" required>
+               <span class="agree__box"></span>
+               <span class="agree__text">
+                  Я соглашаюсь с <a href="">Политикой конфиденшиальности</a> и даю согласие
+                  на <a href="">обработку персональных данных</a>
+               </span>
             </label>
-          </div>
-          <div class="hero__request-form-footer">
+         </div>
+         <div class="hero__request-form-footer">
             <div class="hero__request-form-actions">
-              <button type="submit" class="btn">Заказать звонок</button>
+               <button type="submit" class="btn">Заказать звонок</button>
             </div>
-          </div>
-        </form>
-        <div class="request-popup__close popup__close">
-          <svg>
+         </div>
+      </form>
+      <div class="request-popup__close popup__close">
+         <svg>
             <use xlink:href="img/icons/icons.svg#icon-close"></use>
-          </svg>
-        </div>
+         </svg>
       </div>
-    </div>
+   </div>
+</div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>

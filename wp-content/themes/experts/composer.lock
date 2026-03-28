@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9a09b68abdadcf9b18d4d9ed8c453d6c",
+    "content-hash": "452e9d499b1e3e8871d2827b462b4a63",
     "packages": [
         {
             "name": "altorouter/altorouter",
@@ -2269,6 +2269,49 @@
             "time": "2021-10-29T13:26:27+00:00"
         },
         {
+            "name": "rakit/validation",
+            "version": "v0.13.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rakit/validation.git",
+                "reference": "218c8047f299a3d8f6458a10bce7df3532597be4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rakit/validation/zipball/218c8047f299a3d8f6458a10bce7df3532597be4",
+                "reference": "218c8047f299a3d8f6458a10bce7df3532597be4",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Rakit\\Validation\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Muhammad Syifa",
+                    "email": "emsifa@gmail.com"
+                }
+            ],
+            "description": "PHP Laravel like standalone validation library",
+            "support": {
+                "issues": "https://github.com/rakit/validation/issues",
+                "source": "https://github.com/rakit/validation/tree/master"
+            },
+            "time": "2017-10-18T12:57:53+00:00"
+        },
+        {
             "name": "ralouphie/getallheaders",
             "version": "3.0.3",
             "source": {
@@ -2380,6 +2423,83 @@
                 "source": "https://github.com/Rareloop/lumberjack-core/tree/v8.2.0"
             },
             "time": "2026-03-24T15:36:31+00:00"
+        },
+        {
+            "name": "rareloop/lumberjack-email",
+            "version": "v1.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Rareloop/lumberjack-email.git",
+                "reference": "aca4dcf720bee62992f40a848ae6531c9879453c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Rareloop/lumberjack-email/zipball/aca4dcf720bee62992f40a848ae6531c9879453c",
+                "reference": "aca4dcf720bee62992f40a848ae6531c9879453c",
+                "shasum": ""
+            },
+            "require": {
+                "rareloop/lumberjack-core": "^8.0.0"
+            },
+            "require-dev": {
+                "antecedent/patchwork": "^2.2.3",
+                "brain/monkey": "^2.6.2",
+                "mockery/mockery": "^1.6.12",
+                "php-coveralls/php-coveralls": "^2.8",
+                "phpunit/phpunit": "^9.6.29",
+                "squizlabs/php_codesniffer": "^3.13.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Rareloop\\Lumberjack\\Email\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "support": {
+                "issues": "https://github.com/Rareloop/lumberjack-email/issues",
+                "source": "https://github.com/Rareloop/lumberjack-email/tree/v1.5.0"
+            },
+            "time": "2025-10-15T11:20:59+00:00"
+        },
+        {
+            "name": "rareloop/lumberjack-validation",
+            "version": "v1.1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Rareloop/lumberjack-validation.git",
+                "reference": "cb2e3a77d6802588370db4fd11ec7dad48a28ae7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Rareloop/lumberjack-validation/zipball/cb2e3a77d6802588370db4fd11ec7dad48a28ae7",
+                "reference": "cb2e3a77d6802588370db4fd11ec7dad48a28ae7",
+                "shasum": ""
+            },
+            "require": {
+                "rakit/validation": "^0.13.1",
+                "rareloop/lumberjack-core": "^6.0.0||^7.0.0||^8.0.0"
+            },
+            "require-dev": {
+                "antecedent/patchwork": "^2.2.3",
+                "brain/monkey": "^2.6.2",
+                "mockery/mockery": "^1.6.12",
+                "php-coveralls/php-coveralls": "^2.8",
+                "phpunit/phpunit": "^9.6.29",
+                "squizlabs/php_codesniffer": "^3.13.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Rareloop\\Lumberjack\\Validation\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "support": {
+                "issues": "https://github.com/Rareloop/lumberjack-validation/issues",
+                "source": "https://github.com/Rareloop/lumberjack-validation/tree/v1.1.3"
+            },
+            "time": "2025-10-15T11:28:59+00:00"
         },
         {
             "name": "rareloop/psr7-server-request-extension",

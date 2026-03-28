@@ -296,7 +296,6 @@ _modules_functions_js__WEBPACK_IMPORTED_MODULE_0__.isWebp();
 _modules_functions_js__WEBPACK_IMPORTED_MODULE_0__.burgerMenu();
 _modules_functions_js__WEBPACK_IMPORTED_MODULE_0__.popups();
 _modules_functions_js__WEBPACK_IMPORTED_MODULE_0__.phoneMask();
-
 /*==========================================================================
 Particles
 ============================================================================*/
@@ -933,6 +932,71 @@ document.addEventListener('DOMContentLoaded', () => {
    moveRequestAdv();
    initHeaderScroll();
 })
+
+
+
+
+const notyf = new Notyf({
+  duration: 2000,
+  position: {
+    x: 'center',
+    y: 'top',
+  },
+});
+
+
+
+class Sendler {
+
+  async submit(e) {
+    e.preventDefault()
+
+    e.target.querySelector('button[type="submit"]').disabled = true
+
+    const req = await fetch(e.target.dataset.url, {
+      method: 'POST',
+      body: new FormData(e.target)
+    })
+    
+    const res = await req.json()
+    
+    if (res.success) {
+      notyf.success(res.message)
+      e.target.reset();
+      e.target?.closest('#request-popup')?.classList?.remove('show')
+    } else if (!res.success) {
+      notyf.error(res.message)
+    }
+
+    e.target.querySelector('button[type="submit"]').disabled = false
+
+  }
+}
+
+
+const sendler = new Sendler()
+
+
+window.addEventListener('submit', sendler.submit)
+
+
+
+class Popup {
+  async get(e) {
+    const req = await fetch(e.target.dataset.url)
+
+    const res = await req.json()
+document.body.insertAdjacentHTML('beforeend',res.html)
+
+
+    console.log(res)
+  }
+}
+
+
+const popup = new Popup()
+
+window.addEventListener('click', popup.get)
 })();
 
 /******/ })()

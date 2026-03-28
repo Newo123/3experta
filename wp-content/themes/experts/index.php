@@ -8,20 +8,20 @@
  * E.g., it puts together the home page when no home.php file exists
  */
 
-namespace App;
+// namespace App;
 
-use App\Http\Controllers\Controller;
-use Rareloop\Lumberjack\Http\Responses\TimberResponse;
-use Rareloop\Lumberjack\Post;
-use Timber\Timber;
+// use App\Http\Controllers\Controller;
+// use Rareloop\Lumberjack\Http\Responses\TimberResponse;
+// use Rareloop\Lumberjack\Post;
+// use Timber\Timber;
 
-class IndexController extends Controller
-{
-    public function handle()
-    {
-        $context = Timber::context();
-        $context['posts'] = Post::all();
+// class IndexController extends Controller
+// {
+//     public function handle()
+//     {
+//         $context = Timber::context();
+//         $context['posts'] = Post::all();
 
-        return new TimberResponse('templates/posts.twig', $context);
-    }
-}
+//         return new TimberResponse('templates/posts.twig', $context);
+//     }
+// }

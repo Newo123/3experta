@@ -31,7 +31,9 @@
         "phpoption/phpoption": "^1.9",
         "composer/installers": "^1.0",
         "rareloop/lumberjack-core": "^8.2",
-        "vlucas/phpdotenv": "^5.6"
+        "vlucas/phpdotenv": "^5.6",
+        "rareloop/lumberjack-email": "^1.5",
+        "rareloop/lumberjack-validation": "^1.1"
     },
     "config": {
         "allow-plugins": {

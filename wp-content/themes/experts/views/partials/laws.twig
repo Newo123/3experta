@@ -1,304 +1,75 @@
-<section class="laws">
+<section class="laws" id="news">
 	<div class="laws__body container section-padding">
-		<h2 class="laws__title section-title">Что изменяется в России
+		<h2 class="laws__title section-title">
+			Что изменяется в России
 			<br>
-			Блок новых законов</h2>
-		<div class="laws__subtitle section-subtitle">Коротко об актуальных изменениях законодательства и важных
-																		            новостях для бизнеса</div>
-		<div class="laws__main">
-			<div class="laws__tabs">
-				<div class="laws__tabs-wrapper">
-					<div class="laws__tab" data-tab="1">Актуальные новости</div>
-					<div class="laws__tab" data-tab="2">Прошлые изменения</div>
-					<div class="laws__tabs-bg"></div>
+			Блок новых законов
+		</h2>
+		<div class="laws__subtitle section-subtitle">
+			Коротко об актуальных изменениях законодательства и важных новостях для бизнеса
+		</div>
+		<div
+			class="laws__main">
+
+			{# Табы #}
+			{% if news|length > 0 %}
+				<div class="laws__tabs">
+					<div class="laws__tabs-wrapper">
+						{% for key, group in news %}
+							<button class="laws__tab {% if loop.first %}active{% endif %}" data-tab="{{ group.term.slug }}" type="button">
+								{{ group.term.name }}
+							</button>
+						{% endfor %}
+						<div class="laws__tabs-bg"></div>
+					</div>
 				</div>
-			</div>
+			{% endif %}
+
+			{# Контент табов #}
 			<div class="laws__contents">
-				<div class="laws__content" data-content="1">
-					<div class="laws__slider swiper">
-						<div class="swiper-wrapper">
-							<div class="laws__slide swiper-slide">
-								<div class="laws__slide-info">
-									<div class="laws__slide-title">
-										<img src="img/icons/law-1.svg" width="42" height="42" alt="icon">
-										Второе повышение ставок утильсбора
-									</div>
-									<div class="laws__slide-text">
-										В дополнение к изменениям с 1 декабря
-																																														                          будет еще одно повышение ставок
-																																														                          утилизационного сбора.
-																																														                          В этот раз — ежегодная индексация,
-																																														                          поскольку с 1 января стартует 2026 год.
-									</div>
-								</div>
-								<div class="laws__slide-bottom">
-									<a href="" class="laws__slide-link" rel="nofollow" target="_blank">
-										Узнать подробнее
-										<svg>
-											<use xlink:href="img/icons/icons.svg#icon-chevron-right"></use>
-										</svg>
-									</a>
-								</div>
-							</div>
-
-							<div class="laws__slide swiper-slide">
-								<div class="laws__slide-info">
-									<div class="laws__slide-title">
-										<img src="img/icons/law-2.svg" width="45" height="39" alt="icon">
-										Повышение
-										<br>
-										НДС
-									</div>
-									<div class="laws__slide-text">
-										Минфин поднял НДС сразу на два
-																																														                          процентных пункта — до 22%.
-																																														                          Прежней остается только льготная
-																																														                          ставка в 10% для социально значимых
-																																														                          категорий.
-									</div>
-								</div>
-								<div class="laws__slide-bottom">
-									<a href="" class="laws__slide-link" rel="nofollow" target="_blank">
-										Узнать подробнее
-										<svg>
-											<use xlink:href="img/icons/icons.svg#icon-chevron-right"></use>
-										</svg>
-									</a>
+				{% for key, group in news %}
+					<div class="laws__content {% if loop.first %}active{% endif %}" data-content="{{ group.term.slug }}">
+						{% if group.posts|length > 0 %}
+							<div class="laws__slider swiper">
+								<div class="swiper-wrapper">
+									{% for post in group.posts %}
+										<div class="laws__slide swiper-slide">
+											<div class="laws__slide-info">
+												<div class="laws__slide-title">
+													{% if post.thumbnail %}
+														<img src="{{ post.thumbnail.src('thumbnail') }}" width="42" height="42" alt="{{ post.thumbnail.alt|default(post.title) }}">
+													{% endif %}
+													{{ post.title }}
+												</div>
+												<div class="laws__slide-text">
+													{% if post.post_excerpt %}
+														{{ post.post_excerpt|striptags|slice(0, 150) }}
+													{% else %}
+														{{ post.content|striptags|slice(0, 150) }}
+													{% endif %}
+													{% if (post.post_excerpt|length > 150 or post.content|length > 150) %}
+														...
+													{% endif %}
+												</div>
+											</div>
+											<div class="laws__slide-bottom">
+												<a href="{{ post.link }}" class="laws__slide-link">
+													Узнать подробнее
+													<svg>
+														<use xlink:href="img/icons/icons.svg#icon-chevron-right"></use>
+													</svg>
+												</a>
+											</div>
+										</div>
+									{% endfor %}
 								</div>
 							</div>
-
-							<div class="laws__slide swiper-slide">
-								<div class="laws__slide-info">
-									<div class="laws__slide-title">
-										<img src="img/icons/law-3.svg" width="45" height="39" alt="icon">
-										Новые сроки
-										<br>
-										хранения переписок
-									</div>
-									<div class="laws__slide-text">
-										Данные о всех переписках россиян
-																																														                          будут хранить в три раза дольше.
-																																														                          Это новое требование для операторов.
-									</div>
-								</div>
-								<div class="laws__slide-bottom">
-									<a href="" class="laws__slide-link" rel="nofollow" target="_blank">
-										Узнать подробнее
-										<svg>
-											<use xlink:href="img/icons/icons.svg#icon-chevron-right"></use>
-										</svg>
-									</a>
-								</div>
-							</div>
-
-							<div class="laws__slide swiper-slide">
-								<div class="laws__slide-info">
-									<div class="laws__slide-title">
-										<img src="img/icons/law-1.svg" width="42" height="42" alt="icon">
-										Второе повышение ставок утильсбора
-									</div>
-									<div class="laws__slide-text">
-										В дополнение к изменениям с 1 декабря
-																																														                          будет еще одно повышение ставок
-																																														                          утилизационного сбора.
-																																														                          В этот раз — ежегодная индексация,
-																																														                          поскольку с 1 января стартует 2026 год.
-									</div>
-								</div>
-								<div class="laws__slide-bottom">
-									<a href="" class="laws__slide-link" rel="nofollow" target="_blank">
-										Узнать подробнее
-										<svg>
-											<use xlink:href="img/icons/icons.svg#icon-chevron-right"></use>
-										</svg>
-									</a>
-								</div>
-							</div>
-
-							<div class="laws__slide swiper-slide">
-								<div class="laws__slide-info">
-									<div class="laws__slide-title">
-										<img src="img/icons/law-2.svg" width="45" height="39" alt="icon">
-										Повышение
-										<br>
-										НДС
-									</div>
-									<div class="laws__slide-text">
-										Минфин поднял НДС сразу на два
-																																														                          процентных пункта — до 22%.
-																																														                          Прежней остается только льготная
-																																														                          ставка в 10% для социально значимых
-																																														                          категорий.
-									</div>
-								</div>
-								<div class="laws__slide-bottom">
-									<a href="" class="laws__slide-link" rel="nofollow" target="_blank">
-										Узнать подробнее
-										<svg>
-											<use xlink:href="img/icons/icons.svg#icon-chevron-right"></use>
-										</svg>
-									</a>
-								</div>
-							</div>
-
-							<div class="laws__slide swiper-slide">
-								<div class="laws__slide-info">
-									<div class="laws__slide-title">
-										<img src="img/icons/law-3.svg" width="45" height="39" alt="icon">
-										Новые сроки
-										<br>
-										хранения переписок
-									</div>
-									<div class="laws__slide-text">
-										Данные о всех переписках россиян
-																																														                          будут хранить в три раза дольше.
-																																														                          Это новое требование для операторов.
-									</div>
-								</div>
-								<div class="laws__slide-bottom">
-									<a href="" class="laws__slide-link" rel="nofollow" target="_blank">
-										Узнать подробнее
-										<svg>
-											<use xlink:href="img/icons/icons.svg#icon-chevron-right"></use>
-										</svg>
-									</a>
-								</div>
-							</div>
-						</div>
+							<div class="laws__pagination slider-pagination"></div>
+						{% else %}
+							<p>Нет новостей в этой категории</p>
+						{% endif %}
 					</div>
-					<div class="laws__pagination slider-pagination"></div>
-				</div>
-
-				<div class="laws__content" data-content="2">
-					<div class="laws__slider swiper">
-						<div class="swiper-wrapper">
-							<div class="laws__slide swiper-slide">
-								<div class="laws__slide-info">
-									<div class="laws__slide-title">
-										<img src="img/icons/law-2.svg" width="45" height="39" alt="icon">
-										Повышение
-										<br>
-										НДС
-									</div>
-									<div class="laws__slide-text">
-										Минфин поднял НДС сразу на два
-																																														                          процентных пункта — до 22%.
-																																														                          Прежней остается только льготная
-																																														                          ставка в 10% для социально значимых
-																																														                          категорий.
-									</div>
-								</div>
-								<div class="laws__slide-bottom">
-									<a href="" class="laws__slide-link" rel="nofollow" target="_blank">
-										Узнать подробнее
-										<svg>
-											<use xlink:href="img/icons/icons.svg#icon-chevron-right"></use>
-										</svg>
-									</a>
-								</div>
-							</div>
-
-							<div class="laws__slide swiper-slide">
-								<div class="laws__slide-info">
-									<div class="laws__slide-title">
-										<img src="img/icons/law-3.svg" width="45" height="39" alt="icon">
-										Новые сроки
-										<br>
-										хранения переписок
-									</div>
-									<div class="laws__slide-text">
-										Данные о всех переписках россиян
-																																														                          будут хранить в три раза дольше.
-																																														                          Это новое требование для операторов.
-									</div>
-								</div>
-								<div class="laws__slide-bottom">
-									<a href="" class="laws__slide-link" rel="nofollow" target="_blank">
-										Узнать подробнее
-										<svg>
-											<use xlink:href="img/icons/icons.svg#icon-chevron-right"></use>
-										</svg>
-									</a>
-								</div>
-							</div>
-
-							<div class="laws__slide swiper-slide">
-								<div class="laws__slide-info">
-									<div class="laws__slide-title">
-										<img src="img/icons/law-1.svg" width="42" height="42" alt="icon">
-										Второе повышение ставок утильсбора
-									</div>
-									<div class="laws__slide-text">
-										В дополнение к изменениям с 1 декабря
-																																														                          будет еще одно повышение ставок
-																																														                          утилизационного сбора.
-																																														                          В этот раз — ежегодная индексация,
-																																														                          поскольку с 1 января стартует 2026 год.
-									</div>
-								</div>
-								<div class="laws__slide-bottom">
-									<a href="" class="laws__slide-link" rel="nofollow" target="_blank">
-										Узнать подробнее
-										<svg>
-											<use xlink:href="img/icons/icons.svg#icon-chevron-right"></use>
-										</svg>
-									</a>
-								</div>
-							</div>
-
-							<div class="laws__slide swiper-slide">
-								<div class="laws__slide-info">
-									<div class="laws__slide-title">
-										<img src="img/icons/law-2.svg" width="45" height="39" alt="icon">
-										Повышение
-										<br>
-										НДС
-									</div>
-									<div class="laws__slide-text">
-										Минфин поднял НДС сразу на два
-																																														                          процентных пункта — до 22%.
-																																														                          Прежней остается только льготная
-																																														                          ставка в 10% для социально значимых
-																																														                          категорий.
-									</div>
-								</div>
-								<div class="laws__slide-bottom">
-									<a href="" class="laws__slide-link" rel="nofollow" target="_blank">
-										Узнать подробнее
-										<svg>
-											<use xlink:href="img/icons/icons.svg#icon-chevron-right"></use>
-										</svg>
-									</a>
-								</div>
-							</div>
-
-							<div class="laws__slide swiper-slide">
-								<div class="laws__slide-info">
-									<div class="laws__slide-title">
-										<img src="img/icons/law-3.svg" width="45" height="39" alt="icon">
-										Новые сроки
-										<br>
-										хранения переписок
-									</div>
-									<div class="laws__slide-text">
-										Данные о всех переписках россиян
-																																														                          будут хранить в три раза дольше.
-																																														                          Это новое требование для операторов.
-									</div>
-								</div>
-								<div class="laws__slide-bottom">
-									<a href="" class="laws__slide-link" rel="nofollow" target="_blank">
-										Узнать подробнее
-										<svg>
-											<use xlink:href="img/icons/icons.svg#icon-chevron-right"></use>
-										</svg>
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="laws__pagination slider-pagination"></div>
-				</div>
+				{% endfor %}
 			</div>
 		</div>
 	</div>

@@ -42,6 +42,12 @@ class AppServiceProvider extends ServiceProvider
     $context['worktime'] = get_field('site_worktime', 'options');
     $context['email'] = get_field('site_email', 'options');
     $context['location'] = get_field('site_location', 'options');
+    $context['privacy'] = get_field('site_privacy', 'options');
+    $context['agreement'] = get_field('site_agreement', 'options');
+    $context['services_posts'] = Timber::get_posts([
+      'post_type' => 'services',
+      'posts_per_page' => -1
+    ]);
 
     return $context;
   }
