@@ -467,7 +467,9 @@ Home
    &__text {
       font-size: 12px;
       line-height: normal;
-      a {
+      button {
+        font-size: 12px;
+      line-height: normal;
          @media (hover: hover) {
             &:hover {
                text-decoration: underline;

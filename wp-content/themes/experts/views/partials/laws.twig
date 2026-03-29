@@ -41,24 +41,19 @@
 													{% endif %}
 													{{ post.title }}
 												</div>
-												<div class="laws__slide-text">
-													{% if post.post_excerpt %}
-														{{ post.post_excerpt|striptags|slice(0, 150) }}
-													{% else %}
-														{{ post.content|striptags|slice(0, 150) }}
-													{% endif %}
-													{% if (post.post_excerpt|length > 150 or post.content|length > 150) %}
-														...
-													{% endif %}
-												</div>
+												{% if post.content %}
+													<div class="laws__slide-text">
+														{{ post.content|excerpt(19) }}
+													</div>
+												{% endif %}
 											</div>
 											<div class="laws__slide-bottom">
-												<a href="{{ post.link }}" class="laws__slide-link">
+												<button data-url="{{ site.url }}/popup/news?id={{ post.id }}" class="laws__slide-link">
 													Узнать подробнее
 													<svg>
-														<use xlink:href="img/icons/icons.svg#icon-chevron-right"></use>
+														<use xlink:href="{{ theme.link }}/assets/img/icons/icons.svg#icon-chevron-right"></use>
 													</svg>
-												</a>
+												</button>
 											</div>
 										</div>
 									{% endfor %}

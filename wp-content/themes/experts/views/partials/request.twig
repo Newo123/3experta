@@ -9,7 +9,7 @@
 					</div>
 					<div class="request__advantage-text">
 						Гарантия полной конфиденциальности по
-																																										                  договору (NDA)
+																																																												                  договору (NDA)
 					</div>
 				</div>
 				<div class="request__advantage">
@@ -31,7 +31,7 @@
 			</div>
 			<div class="request__form">
 				<div class="hero__request">
-					<form class="hero__request-form">
+					<form class="hero__request-form" data-url="{{ site.url }}/mail/send">
 						<div class="hero__request-form-item">
 							<div class="hero__request-form-label">Имя</div>
 							<div class="hero__request-form-area">
@@ -52,14 +52,14 @@
 						</div>
 						<div class="hero__request-form-agree">
 							<label class="agree">
-								<input type="checkbox" name="policy" value="agree" required>
+								<input type="checkbox" name="policy" required>
 								<span class="agree__box"></span>
 								<span class="agree__text">
 									Я соглашаюсь с
-									<a href="">Политикой конфиденшиальности</a>
+									<button type="button" data-url="{{ site.url }}/popup/privacy">Политикой конфиденшиальности</button>
 									и даю согласие
-																																																												                        на
-									<a href="">обработку персональных данных</a>
+																																																																																							                        на
+																																				обработку персональных данных
 								</span>
 							</label>
 						</div>

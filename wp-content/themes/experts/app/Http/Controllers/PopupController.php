@@ -11,6 +11,12 @@ class PopupController extends BaseController
 {
   public function get(ServerRequest $request, $slug)
   {
+
+
+    if ($slug === 'news') {
+      return $this->getNew($request->query('id'));
+    }
+
     if ($slug === 'services') {
       return $this->getService($request->query('id'));
     }
@@ -23,10 +29,51 @@ class PopupController extends BaseController
       return $this->getPrivacy();
     }
 
+
     return new JsonResponse([
       'success' => false,
       'message' => 'Неверный запрос'
     ], 404);
+  }
+
+  private function getNew($newId)
+  {
+
+    if (!$newId) {
+      return new JsonResponse([
+        'success' => false,
+        'message' => 'ID новости не передан'
+      ], 400);
+    }
+    $post = get_post($newId);
+
+    if (!$post || $post->post_type !== 'news') {
+      return new JsonResponse([
+        'success' => false,
+        'message' => 'Новость не найдена'
+      ], 404);
+    }
+
+    $data = [
+      'id' => $post->ID,
+      'title' => get_the_title($post),
+      'content' => apply_filters('the_content', $post->post_content),
+      'excerpt' => get_the_excerpt($post),
+      'slug' => $post->post_name,
+      'link' => get_permalink($post),
+      'thumbnail' => get_the_post_thumbnail_url($post, 'full'),
+    ];
+
+    $context = Timber::get_context();
+    $context['new'] = $data;
+
+    $html = Timber::compile('includes/new.twig', $context);
+
+    return new JsonResponse([
+      'success' => true,
+      'html' => $html,
+      'data' => $data
+    ]);
   }
 
   private function getService($serviceId)
@@ -77,9 +124,10 @@ class PopupController extends BaseController
 
   private function getAgreement()
   {
-    $page = get_page_by_path('agreement', OBJECT, 'page');
 
-    if (!$page) {
+    $agreement = get_field('site_agreement', 'options');
+
+    if (!$agreement) {
       return new JsonResponse([
         'success' => false,
         'message' => 'Страница соглашения не найдена'
@@ -87,9 +135,8 @@ class PopupController extends BaseController
     }
 
     $context = Timber::get_context();
-    $context['page'] = [
-      'title' => $page->post_title,
-      'content' => apply_filters('the_content', $page->post_content),
+    $context['agreement'] = [
+      'content' => $agreement,
     ];
 
     $html = Timber::compile('includes/agreement.twig', $context);
@@ -102,19 +149,18 @@ class PopupController extends BaseController
 
   private function getPrivacy()
   {
-    $page = get_page_by_path('privacy', OBJECT, 'page');
+    $privacy = get_field('site_privacy', 'options');
 
-    if (!$page) {
+    if (!$privacy) {
       return new JsonResponse([
         'success' => false,
-        'message' => 'Страница политики не найдена'
+        'message' => 'Страница соглашения не найдена'
       ], 404);
     }
 
     $context = Timber::get_context();
-    $context['page'] = [
-      'title' => $page->post_title,
-      'content' => apply_filters('the_content', $page->post_content),
+    $context['privacy'] = [
+      'content' => $privacy,
     ];
 
     $html = Timber::compile('includes/privacy.twig', $context);

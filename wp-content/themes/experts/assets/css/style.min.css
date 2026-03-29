@@ -752,11 +752,11 @@ Footer
   display: flex;
   gap: 20px;
 }
-.footer__legal-links a {
+.footer__legal-links button {
   transition: all 0.3s ease;
 }
 @media (hover: hover) {
-  .footer__legal-links a:hover {
+  .footer__legal-links button:hover {
     color: var(--color-primary);
   }
 }
@@ -1144,8 +1144,12 @@ Home
   font-size: 12px;
   line-height: normal;
 }
+.agree__text button {
+  font-size: 12px;
+  line-height: normal;
+}
 @media (hover: hover) {
-  .agree__text a:hover {
+  .agree__text button:hover {
     text-decoration: underline;
   }
 }

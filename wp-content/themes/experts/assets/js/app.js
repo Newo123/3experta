@@ -983,13 +983,31 @@ window.addEventListener('submit', sendler.submit)
 
 class Popup {
   async get(e) {
-    const req = await fetch(e.target.dataset.url)
 
-    const res = await req.json()
-document.body.insertAdjacentHTML('beforeend',res.html)
+    if (e.target.dataset.url) {
+      const req = await fetch(e.target.dataset.url)
 
+      const res = await req.json()
+      const parser = new DOMParser()
+      const doc = parser.parseFromString(res.html, 'text/html')
+      const popupElement = doc.body.firstElementChild
 
-    console.log(res)
+      document.body.appendChild(popupElement)
+      document.body.classList.add('popup-opened')
+      setTimeout(() => {
+        popupElement.classList.add('show')
+      }, 100)
+
+    } else if (e.target.dataset.close) {
+      document.body.classList.remove('popup-opened')
+      
+      setTimeout(() => {
+        e.target.remove()
+      }, 400)
+
+    }
+
+    
   }
 }
 

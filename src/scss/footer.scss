@@ -186,7 +186,7 @@ Footer
    &__legal-links {
       display: flex;
       gap: 20px;
-      a {
+      button {
          transition: all 0.3s ease;
          @media (hover: hover) {
             &:hover {

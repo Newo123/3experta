@@ -16,7 +16,7 @@
 								{{ item.title }}
 							</div>
 							<div class="services__card-descr">
-								{{ item.excerpt }}
+								{{ item.content|excerpt(10) }}
 							</div>
 						</div>
 						<div class="services__card-bottom">
