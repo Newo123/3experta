@@ -1,14 +1,14 @@
-{% if services_posts %}
+{% if services %}
 	<section class="services" id="services">
 		<div class="services__body container section-padding">
 			<h2 class="services__title section-title">
-				{{ services.title }}
+				{{ title }}
 			</h2>
 			<div class="services__subtitle section-subtitle">
-				{{ services.subtitle }}
+				{{ subtitle }}
 			</div>
 			<div class="services__cards">
-				{% for item in services_posts %}
+				{% for item in services %}
 					<div class="services__card" id="{{ item.slug }}">
 						<div class="services__cards-top">
 							<div class="services__card-title">

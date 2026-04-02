@@ -44,10 +44,7 @@ class AppServiceProvider extends ServiceProvider
     $context['location'] = get_field('site_location', 'options');
     $context['privacy'] = get_field('site_privacy', 'options');
     $context['agreement'] = get_field('site_agreement', 'options');
-    $context['services_posts'] = Timber::get_posts([
-      'post_type' => 'services',
-      'posts_per_page' => -1
-    ]);
+    $context['telegram'] = $this->extractTelegram($context['socials']);
 
     return $context;
   }
@@ -57,5 +54,21 @@ class AppServiceProvider extends ServiceProvider
     $mimes['svg'] = 'image/svg+xml';
     return $mimes;
   }
+  public function extractTelegram($socials)
+  {
+    if (empty($socials) || !is_array($socials)) {
+      return null;
+    }
+
+    foreach ($socials as $social) {
+      // Проверяем массив link и поле title
+      if (isset($social['link']['title']) && strtolower($social['link']['title']) === 'telegram') {
+        return $social['link']['url'] ?? null;
+      }
+    }
+
+    return null;
+  }
+
 
 }

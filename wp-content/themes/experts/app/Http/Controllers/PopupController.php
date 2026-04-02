@@ -20,6 +20,9 @@ class PopupController extends BaseController
     if ($slug === 'services') {
       return $this->getService($request->query('id'));
     }
+    if ($slug === 'business_services') {
+      return $this->getBusinessService($request->query('id'));
+    }
 
     if ($slug === 'agreement') {
       return $this->getAgreement();
@@ -105,6 +108,7 @@ class PopupController extends BaseController
       'slug' => $post->post_name,
       'link' => get_permalink($post),
       'thumbnail' => get_the_post_thumbnail_url($post, 'full'),
+      'popup' => get_field('services_popup', $post->ID),
     ];
 
     // Получаем контекст Timber
@@ -113,6 +117,53 @@ class PopupController extends BaseController
 
     // Рендерим HTML в строку
     $html = Timber::compile('includes/service.twig', $context);
+
+    // Возвращаем JSON с HTML
+    return new JsonResponse([
+      'success' => true,
+      'html' => $html,
+      'data' => $data // опционально, если нужно
+    ]);
+  }
+
+  private function getBusinessService($serviceId)
+  {
+    if (!$serviceId) {
+      return new JsonResponse([
+        'success' => false,
+        'message' => 'ID услуги не передан'
+      ], 400);
+    }
+
+    // Получаем пост
+    $post = get_post($serviceId);
+
+    // Проверяем существование
+    if (!$post || $post->post_type !== 'business_services') {
+      return new JsonResponse([
+        'success' => false,
+        'message' => 'Услуга не найдена'
+      ], 404);
+    }
+
+    // Подготавливаем данные
+    $data = [
+      'id' => $post->ID,
+      'title' => get_the_title($post),
+      'content' => apply_filters('the_content', $post->post_content),
+      'excerpt' => get_the_excerpt($post),
+      'slug' => $post->post_name,
+      'link' => get_permalink($post),
+      'thumbnail' => get_the_post_thumbnail_url($post, 'full'),
+      'popup' => get_field('services_popup', $post->ID),
+    ];
+
+    // Получаем контекст Timber
+    $context = Timber::get_context();
+    $context['service'] = $data;
+
+    // Рендерим HTML в строку
+    $html = Timber::compile('includes/business_service.twig', $context);
 
     // Возвращаем JSON с HTML
     return new JsonResponse([

@@ -20,7 +20,12 @@ class PageHomeController extends Controller
     $context['hero'] = get_field('hero');
     $context['advantages'] = get_field('advantages');
     $context['solutions'] = get_field('solutions');
-    $context['services'] = get_field('services');
+    // $context['services'] = get_field('services');
+    // $context['business_services'] = get_field('business_services');
+    // $context['business_services_posts'] = Timber::get_posts([
+    //   'post_type' => 'business_services',
+    //   'posts_per_page' => -1
+    // ]);
 
     $context['process'] = get_field('process');
     $context['founder'] = get_field('founder');
@@ -84,7 +89,45 @@ class PageHomeController extends Controller
 
     // Передаем сгруппированные новости в контекст
     $context['news'] = $grouped_news;
+    $context['services'] = $this->get_services_grouped_by_direction();
+    $context['ecosystem_posts'] = Timber::get_posts([
+      'post_type' => 'ecosystem',
+      'posts_per_page' => -1
+    ]);
+    $context['ecosystem'] = get_field('ecosystem');
 
     return new TimberResponse('templates/home.twig', $context);
+  }
+
+  public function get_services_grouped_by_direction()
+  {
+    $directions = Timber::get_terms([
+      'taxonomy' => 'direction',
+      'hide_empty' => true,
+    ]);
+
+    $grouped = [];
+
+    foreach ($directions as $direction) {
+      $grouped[$direction->slug] = [
+        'slug' => $direction->slug,
+        'title' => get_field('direction', 'term_' . $direction->ID)['title'] ?: $direction->name,
+        'subtitle' => get_field('direction', 'term_' . $direction->ID)['subtitle'] ?: '',
+        'description' => $direction->description,
+        'items' => Timber::get_posts([
+          'post_type' => 'services',
+          'posts_per_page' => -1,
+          'tax_query' => [
+            [
+              'taxonomy' => 'direction',
+              'field' => 'slug',
+              'terms' => $direction->slug
+            ]
+          ]
+        ])
+      ];
+    }
+
+    return $grouped;
   }
 }

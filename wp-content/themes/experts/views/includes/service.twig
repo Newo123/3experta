@@ -1,12 +1,40 @@
 <div id="service-popup-{{ service.id }}" class="request-popup popup" role="dialog" aria-modal="true" data-close="1">
 	<div class="request-popup__body popup__body">
-		<div class="hero__request-form" style="display:flex;flex-direction: column;gap:12px;">
-			<h2>
-				{{ service.title }}
-			</h2>
-			<div>
-				{{ service.content }}
+		<div class="body-popup">
+			<p>{{ service.popup.label }}</p>
+			<h2>{{ service.title }}</h2>
+			{% if service.popup.list  %}
+				<div class="body-popup__list">
+					{% for item in service.popup.list %}
+						<div class="body-popup__list-item">
+							<h6>{{ item.title }}</h6>
+							{% if item.items %}
+								<ul>
+									{% for subitem in item.items %}
+										<li>
+											<svg width="10" height="17" viewbox="0 0 10 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path fill-rule="evenodd" clip-rule="evenodd" d="M1.91989 16.5429L9.23137 9.23142C9.67062 8.79218 9.67062 8.07992 9.23137 7.64067L1.91989 0.329188C1.48104 -0.10966 0.768184 -0.109859 0.329137 0.329188C-0.10991 0.768235 -0.109711 1.48109 0.329137 1.91994L6.84525 8.43605L0.329137 14.9522C-0.109711 15.391 -0.10991 16.1039 0.329137 16.5429C0.768184 16.982 1.48104 16.9818 1.91989 16.5429Z" fill="#C2A75A"/>
+											</svg>
+											{{ subitem.text }}</li>
+									{% endfor %}
+								</ul>
+							{% endif %}
+						</div>
+					{% endfor %}
+					{% if service.popup.price  %}
+						<div class="body-popup__price">
+							Стоимость:
+							<span>{{ service.popup.price }}</span>
+						</div>
+					{% endif %}
+				</div>
+			{% endif %}
+			<div class="body-popup__bottom">
+				<button type="button" class="btn open-popup" data-popup="request-popup">Заказать услугу →</button>
+				<p>Точная стоимость зависит от масштаба бизнеса</p>
 			</div>
+
+
 		</div>
 		<div class="request-popup__close popup__close" data-close="1">
 			<svg>
