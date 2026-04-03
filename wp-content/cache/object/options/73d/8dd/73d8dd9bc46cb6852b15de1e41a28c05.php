@@ -1,1 +1,1 @@
-²¨Îi<?php exit; ?>a:2:{s:7:"content";s:9:"asdasdasd";s:15:"key_version_all";i:2;}
+r~Ïi<?php exit; ?>a:2:{s:7:"content";s:9:"asdasdasd";s:15:"key_version_all";i:2;}

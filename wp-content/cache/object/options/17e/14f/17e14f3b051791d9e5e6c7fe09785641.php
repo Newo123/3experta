@@ -1,1 +1,1 @@
-���i<?php exit; ?>a:2:{s:7:"content";s:26:"Россия, Ижевск";s:15:"key_version_all";i:2;}
+r~�i<?php exit; ?>a:2:{s:7:"content";s:26:"Россия, Ижевск";s:15:"key_version_all";i:2;}

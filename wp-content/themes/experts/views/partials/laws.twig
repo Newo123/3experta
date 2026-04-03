@@ -43,18 +43,19 @@
 												</div>
 												{% if post.content %}
 													<div class="laws__slide-text">
-														{{ post.content|excerpt(19) }}
+														{{ post.content }}
+														{# |excerpt(19) #}
 													</div>
 												{% endif %}
 											</div>
-											<div class="laws__slide-bottom">
-												<button data-url="{{ site.url }}/popup/news?id={{ post.id }}" class="laws__slide-link">
-													Узнать подробнее
-													<svg>
-														<use xlink:href="{{ theme.link }}/assets/img/icons/icons.svg#icon-chevron-right"></use>
-													</svg>
-												</button>
-											</div>
+											{# <div class="laws__slide-bottom">
+																																		<button data-url="{{ site.url }}/popup/news?id={{ post.id }}" class="laws__slide-link">
+																																			Узнать подробнее
+																																			<svg>
+																																				<use xlink:href="{{ theme.link }}/assets/img/icons/icons.svg#icon-chevron-right"></use>
+																																			</svg>
+																																		</button>
+																																	</div> #}
 										</div>
 									{% endfor %}
 								</div>
