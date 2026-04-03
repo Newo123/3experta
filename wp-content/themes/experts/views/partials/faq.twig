@@ -1,0 +1,63 @@
+{% if faq.items %}
+	{% set total = faq.items|length %}
+	{% set first_col_count = 3 %}
+	{# В первой колонке 3 элемента #}
+	{% set second_col_count = total - first_col_count %}
+	{# Остальные во второй #}
+
+	<section class="faq" id="faq">
+		<div class="faq__body container section-padding">
+			<h2 class="faq__title section-title">Часто задаваемые вопросы</h2>
+			<div class="faq__subtitle section-subtitle">Отвечаем на вопросы, которые чаще всего волнуют предпринимателей</div>
+			<div class="faq__items">
+
+				<div class="faq__items-col">
+					{% for item in faq.items|slice(0, first_col_count) %}
+						<div class="faq__item">
+							<div class="faq__item-question">
+								{{ item.question }}
+								<div class="faq__item-icon">
+									<svg>
+										<use xlink:href="{{ theme.link }}/assets/img/icons/icons.svg#icon-plus"></use>
+									</svg>
+									<svg>
+										<use xlink:href="{{ theme.link }}/assets/img/icons/icons.svg#icon-minus"></use>
+									</svg>
+								</div>
+							</div>
+							<div class="faq__answer">
+								<div class="faq__answer-wrapper">
+									{{ item.answer }}
+								</div>
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+
+				<div class="faq__items-col">
+					{% for item in faq.items|slice(first_col_count) %}
+						<div class="faq__item">
+							<div class="faq__item-question">
+								{{ item.question }}
+								<div class="faq__item-icon">
+									<svg>
+										<use xlink:href="{{ theme.link }}/assets/img/icons/icons.svg#icon-plus"></use>
+									</svg>
+									<svg>
+										<use xlink:href="{{ theme.link }}/assets/img/icons/icons.svg#icon-minus"></use>
+									</svg>
+								</div>
+							</div>
+							<div class="faq__answer">
+								<div class="faq__answer-wrapper">
+									{{ item.answer }}
+								</div>
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+
+			</div>
+		</div>
+	</section>
+{% endif %}

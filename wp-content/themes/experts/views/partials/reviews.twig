@@ -1,0 +1,59 @@
+{% if reviews_posts %}
+	<section class="reviews" id="reviews">
+		<div class="reviews__body container section-padding">
+			<h2 class="reviews__title section-title">{{ reviews.title }}</h2>
+			<div class="reviews__subtitle section-subtitle">
+				{{ reviews.subtitle }}
+			</div>
+			<div class="reviews__content">
+				<div class="reviews__slider swiper">
+					<div class="swiper-wrapper">
+						{% for item in reviews_posts %}
+							<div class="review swiper-slide">
+								<div class="review__rating">
+									{% for i in 1..item.review.rating %}
+										<img src="{{ theme.link }}/assets/img/icons/star.svg" width="28" height="28" alt="star">
+									{% endfor %}
+								</div>
+
+								{% if item.review.text %}
+									<div class="review__text">
+										{{ item.review.text }}
+									</div>
+								{% endif %}
+
+								<div class="review__author">
+
+									{% if item.review.image %}
+										<div class="review__author-photo">
+											<img src="{{ item.review.image.url }}" width="75" height="75" alt="photo">
+										</div>
+									{% endif %}
+
+									<div class="review__author-info">
+										<div class="review__author-name">{{ item.title }}</div>
+
+										{% if item.review.role %}
+											<div class="review__author-role">{{ item.review.role }}</div>
+										{% endif %}
+
+									</div>
+								</div>
+							</div>
+						{% endfor %}
+					</div>
+				</div>
+				<button type="button" class="reviews__prev" aria-label="Предыдущий слайд">
+					<svg>
+						<use xlink:href="{{ theme.link }}/assets/img/icons/icons.svg#icon-chevron-right"></use>
+					</svg>
+				</button>
+				<button type="button" class="reviews__next" aria-label="Следующий слайд">
+					<svg>
+						<use xlink:href="{{ theme.link }}/assets/img/icons/icons.svg#icon-chevron-right"></use>
+					</svg>
+				</button>
+			</div>
+		</div>
+	</section>
+{% endif %}

@@ -1,0 +1,72 @@
+<section class="laws" id="news">
+	<div class="laws__body container section-padding">
+		<h2 class="laws__title section-title">
+			Что изменяется в России
+			<br>
+			Блок новых законов
+		</h2>
+		<div class="laws__subtitle section-subtitle">
+			Коротко об актуальных изменениях законодательства и важных новостях для бизнеса
+		</div>
+		<div
+			class="laws__main">
+
+			{# Табы #}
+			{% if news|length > 0 %}
+				<div class="laws__tabs">
+					<div class="laws__tabs-wrapper">
+						{% for key, group in news %}
+							<button class="laws__tab {% if loop.first %}active{% endif %}" data-tab="{{ group.term.slug }}" type="button">
+								{{ group.term.name }}
+							</button>
+						{% endfor %}
+						<div class="laws__tabs-bg"></div>
+					</div>
+				</div>
+			{% endif %}
+
+			{# Контент табов #}
+			<div class="laws__contents">
+				{% for key, group in news %}
+					<div class="laws__content {% if loop.first %}active{% endif %}" data-content="{{ group.term.slug }}">
+						{% if group.posts|length > 0 %}
+							<div class="laws__slider swiper">
+								<div class="swiper-wrapper">
+									{% for post in group.posts %}
+										<div class="laws__slide swiper-slide">
+											<div class="laws__slide-info">
+												<div class="laws__slide-title">
+													{% if post.thumbnail %}
+														<img src="{{ post.thumbnail.src('thumbnail') }}" width="42" height="42" alt="{{ post.thumbnail.alt|default(post.title) }}">
+													{% endif %}
+													{{ post.title }}
+												</div>
+												{% if post.content %}
+													<div class="laws__slide-text">
+														{{ post.content }}
+														{# |excerpt(19) #}
+													</div>
+												{% endif %}
+											</div>
+											{# <div class="laws__slide-bottom">
+																																		<button data-url="{{ site.url }}/popup/news?id={{ post.id }}" class="laws__slide-link">
+																																			Узнать подробнее
+																																			<svg>
+																																				<use xlink:href="{{ theme.link }}/assets/img/icons/icons.svg#icon-chevron-right"></use>
+																																			</svg>
+																																		</button>
+																																	</div> #}
+										</div>
+									{% endfor %}
+								</div>
+							</div>
+							<div class="laws__pagination slider-pagination"></div>
+						{% else %}
+							<p>Нет новостей в этой категории</p>
+						{% endif %}
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</section>

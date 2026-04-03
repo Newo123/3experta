@@ -1,0 +1,26 @@
+{% if process.items %}
+	<section class="process" id="process">
+		<div class="process__body container section-padding">
+			<div class="process__title section-title">{{ process.title }}</div>
+			<div class="process__subtitle section-subtitle">
+				{{ process.subtitle }}
+			</div>
+			<div class="process__steps">
+				{% for item in process.items %}
+					<div class="process__step">
+						<div class="process__step-head">
+							<div class="process__step-num">{{ loop.index }}</div>
+							<div class="process__step-arrow"></div>
+						</div>
+						<div class="process__step-main">
+							<div class="process__step-title">{{ item.title }}</div>
+							<div class="process__step-text">
+								{{ item.description }}
+							</div>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</section>
+{% endif %}

@@ -1,0 +1,17 @@
+<div id="new-popup-{{ new.id }}" class="request-popup popup" role="dialog" aria-modal="true" data-close="1">
+	<div class="request-popup__body popup__body">
+		<div class="hero__request-form" style="display:flex;flex-direction: column;gap:12px;">
+			<h2>
+				{{ new.title }}
+			</h2>
+			<div>
+				{{ new.content }}
+			</div>
+		</div>
+		<div class="request-popup__close popup__close" data-close="1">
+			<svg>
+				<use xlink:href="{{ theme.link }}/assets/img/icons/icons.svg#icon-close"></use>
+			</svg>
+		</div>
+	</div>
+</div>

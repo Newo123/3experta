@@ -1,0 +1,35 @@
+{% if services %}
+	<section class="services" id="services">
+		<div class="services__body container section-padding">
+			<h2 class="services__title section-title">
+				{{ title }}
+			</h2>
+			<div class="services__subtitle section-subtitle">
+				{{ subtitle }}
+			</div>
+			<div class="services__cards">
+				{% for item in services %}
+					<div class="services__card" id="{{ item.slug }}">
+						<div class="services__cards-top">
+							<div class="services__card-title">
+								<img src="{{ item.thumbnail }}" width="40" height="40" alt="icon">
+								{{ item.title }}
+							</div>
+							<div class="services__card-descr">
+								{{ item.content|excerpt(10) }}
+							</div>
+						</div>
+						<div class="services__card-bottom">
+							<button data-url="{{ site.url }}/popup/services?id={{ item.id }}" class="services__card-link">
+								Узнать подробнее
+								<svg>
+									<use xlink:href="{{ theme.link }}/assets/img/icons/icons.svg#icon-chevron-right"></use>
+								</svg>
+							</button>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</section>
+{% endif %}

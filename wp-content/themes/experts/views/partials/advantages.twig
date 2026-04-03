@@ -1,0 +1,38 @@
+{% if advantages.items %}
+	<section class="advantages" id="clients">
+		<div class="advantages__body container section-padding">
+			<h2 class="advantages__title section-title">{{ advantages.title }}</h2>
+			<div class="advantages__subtitle section-subtitle">
+				{{ advantages.subtitle }}
+			</div>
+			{% if advantages.logos %}
+				<div class="advantages__partners">
+					<div class="advantages__slider swiper">
+						<div class="swiper-wrapper">
+							{% for item in advantages.logos %}
+								<div class="advantages__slide swiper-slide">
+									<img src="{{ item.image.url }}" alt="logo">
+								</div>
+							{% endfor %}
+						</div>
+					</div>
+				</div>
+			{% endif %}
+
+			<div class="advantages__items">
+				{% for item in advantages.items %}
+					<div class="advantages__item">
+						<div class="advantages__item-name">
+							<span>{{ item.title }}</span>
+							{{ item.subtitle }}
+						</div>
+						<div class="advantages__item-text">
+							{{ item.text }}
+
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</section>
+{% endif %}

@@ -1,0 +1,18 @@
+{% extends "layout.twig" %}
+{% block content %}
+	<main>
+		{% include 'hero.twig' %}
+		{% include 'ecosystem.twig' %}
+		{% include 'advantages.twig' %}
+		{% include 'solutions.twig' %}
+		{% include 'services.twig' with { 'services': services.accompaniment.items, 'title': services.accompaniment.title, 'subtitle': services.accompaniment.subtitle } %}
+		{% include 'process.twig' %}
+		{% include 'services.twig' with { 'services': services.solution.items, 'title': services.solution.title, 'subtitle': services.solution.subtitle } %}
+		{% include 'founder.twig' %}
+		{% include 'cases.twig' %}
+		{% include 'laws.twig' %}
+		{% include 'reviews.twig' %}
+		{% include 'faq.twig' %}
+		{% include 'request.twig' %}
+	</main>
+{% endblock %}
