@@ -1,1 +1,1 @@
-r~Ïi<?php exit; ?>a:2:{s:7:"content";a:2:{s:17:"_wp_attached_file";a:1:{i:0;s:17:"2026/03/law-2.svg";}s:23:"_wp_attachment_metadata";a:1:{i:0;s:28:"a:1:{s:8:"filesize";i:2729;}";}}s:15:"key_version_all";i:2;}
+´ôÏi<?php exit; ?>a:2:{s:7:"content";a:2:{s:17:"_wp_attached_file";a:1:{i:0;s:17:"2026/03/law-2.svg";}s:23:"_wp_attachment_metadata";a:1:{i:0;s:28:"a:1:{s:8:"filesize";i:2729;}";}}s:15:"key_version_all";i:2;}
