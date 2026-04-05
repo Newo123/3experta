@@ -1,1 +1,1 @@
-´ôÏi<?php exit; ?>a:2:{s:7:"content";s:107:"a:3:{s:5:"title";s:18:"info@consulting.ru";s:3:"url";s:25:"mailto:info@consulting.ru";s:6:"target";s:0:"";}";s:15:"key_version_all";i:2;}
+DOÒi<?php exit; ?>a:2:{s:7:"content";s:107:"a:3:{s:5:"title";s:18:"info@consulting.ru";s:3:"url";s:25:"mailto:info@consulting.ru";s:6:"target";s:0:"";}";s:15:"key_version_all";i:5;}

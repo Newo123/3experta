@@ -45,7 +45,7 @@ class AppServiceProvider extends ServiceProvider
     $context['privacy'] = get_field('site_privacy', 'options');
     $context['agreement'] = get_field('site_agreement', 'options');
     $context['telegram'] = $this->extractTelegram($context['socials']);
-
+    $context['whatsapp'] = $this->extractWhatsapp($context['socials']);
     return $context;
   }
 
@@ -63,6 +63,21 @@ class AppServiceProvider extends ServiceProvider
     foreach ($socials as $social) {
       // Проверяем массив link и поле title
       if (isset($social['link']['title']) && strtolower($social['link']['title']) === 'telegram') {
+        return $social['link']['url'] ?? null;
+      }
+    }
+
+    return null;
+  }
+  public function extractWhatsapp($socials)
+  {
+    if (empty($socials) || !is_array($socials)) {
+      return null;
+    }
+
+    foreach ($socials as $social) {
+      // Проверяем массив link и поле title
+      if (isset($social['link']['title']) && strtolower($social['link']['title']) === 'whatsapp') {
         return $social['link']['url'] ?? null;
       }
     }
