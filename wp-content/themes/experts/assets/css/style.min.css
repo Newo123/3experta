@@ -2633,3 +2633,143 @@ Quiz
 .body-popup__bottom p {
   text-align: center;
 }
+
+.not-found {
+  background: #031226;
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 90px;
+  position: relative;
+}
+@media (max-width: 768px) {
+  .not-found {
+    padding-top: 140px;
+  }
+}
+.not-found__img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+}
+.not-found__container {
+  position: relative;
+  z-index: 2;
+}
+.not-found__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 813px;
+  padding-bottom: 60px;
+  border-bottom: 2px solid #fff;
+  margin-bottom: 60px;
+}
+.not-found__title {
+  font-weight: 700;
+  font-size: 160px;
+  line-height: 100%;
+  color: #fedd93;
+}
+@media (max-width: 768px) {
+  .not-found__title {
+    font-size: 100px;
+  }
+}
+.not-found__subtitle {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 100%;
+  text-align: center;
+  color: #fedd93;
+  margin-top: 40px;
+}
+@media (max-width: 768px) {
+  .not-found__subtitle {
+    font-size: 30px;
+    margin-top: 20px;
+  }
+}
+.not-found__text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  text-align: center;
+  margin-top: 10px;
+}
+.not-found__actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 40px;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .not-found__actions {
+    flex-direction: column;
+  }
+}
+.not-found__actions button,
+.not-found__actions a {
+  max-width: 326px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 768px) {
+  .not-found__actions button,
+  .not-found__actions a {
+    max-width: 100%;
+  }
+}
+.not-found__actions a {
+  background-color: transparent;
+  border: 2px solid var(--color-primary);
+}
+.not-found__actions a:hover {
+  background-color: #c2a75a;
+}
+.not-found__contacts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+.not-found__contacts-text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  text-align: center;
+}
+.not-found__contacts-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+@media (max-width: 768px) {
+  .not-found__contacts-links {
+    flex-direction: column;
+  }
+}
+.not-found__contacts-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 100%;
+}
+.not-found__contacts-links a img {
+  width: 28px;
+  height: 28px;
+}

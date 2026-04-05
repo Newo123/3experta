@@ -150,6 +150,9 @@
 # END W3TC Browser Cache
 
 
+
+
+
 # BEGIN W3TC AVIF
 <IfModule mod_mime.c>
     AddType image/avif .avif
