@@ -63,8 +63,10 @@ class MailController extends BaseController
         ]
       );
 
+      $to = get_field('site_email_to');
+
       Email::sendHTMLFromTemplate(
-        'scerep529@gmail.com',
+        $to,
         'Новое сообщение от ' . ($formData['name'] ?: 'пользователя') . ' | 3experta',
         'mail/email.twig',
         $formData,
