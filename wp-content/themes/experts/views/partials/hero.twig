@@ -33,6 +33,7 @@
 
 				<div class="hero__request">
 					<form class="hero__request-form" data-url="{{ site.url }}/mail/send">
+						<input type="hidden" name="_token" value="{{ csrf_token }}">
 						<div class="hero__request-form-item">
 							<div class="hero__request-form-label">Имя</div>
 							<div class="hero__request-form-area">
@@ -59,8 +60,8 @@
 									Я соглашаюсь с
 									<button type="button" data-url="{{ site.url }}/popup/privacy">Политикой конфиденшиальности</button>
 									и даю согласие
-																																																																																																																																																																																																																																																																																																																																																																																																																									                      на
-																																																																																																																																							обработку персональных данных
+																																																																																																																																																																																																																																																																																																																																																																																																																																																													                      на
+																																																																																																																																																																											обработку персональных данных
 								</span>
 							</label>
 						</div>
