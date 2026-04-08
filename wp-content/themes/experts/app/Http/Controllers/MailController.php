@@ -63,7 +63,7 @@ class MailController extends BaseController
         ]
       );
 
-      $to = get_field('site_email_to');
+      $to = get_field('site_email_to', 'options');
 
       Email::sendHTMLFromTemplate(
         $to,
