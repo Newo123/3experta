@@ -46,7 +46,6 @@ class AppServiceProvider extends ServiceProvider
     $context['agreement'] = get_field('site_agreement', 'options');
     $context['telegram'] = $this->extractTelegram($context['socials']);
     $context['whatsapp'] = $this->extractWhatsapp($context['socials']);
-    $context['csrf_token'] = session();
 
     return $context;
   }
