@@ -1,1 +1,1 @@
-Ûb÷i<?php exit; ?>a:2:{s:7:"content";s:71:"a:3:{s:5:"title";s:8:"telegram";s:3:"url";s:1:"#";s:6:"target";s:0:"";}";s:15:"key_version_all";i:6;}
+•g÷i<?php exit; ?>a:2:{s:7:"content";s:71:"a:3:{s:5:"title";s:8:"telegram";s:3:"url";s:1:"#";s:6:"target";s:0:"";}";s:15:"key_version_all";i:6;}
