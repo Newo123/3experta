@@ -1,1 +1,1 @@
-oNÒi<?php exit; ?>a:2:{s:7:"content";s:58:"http://localhost:8080/wp-includes/images/media/default.png";s:15:"key_version_all";i:4;}
+Ù^Öi<?php exit; ?>a:2:{s:7:"content";s:58:"http://localhost:8080/wp-includes/images/media/default.png";s:15:"key_version_all";i:6;}

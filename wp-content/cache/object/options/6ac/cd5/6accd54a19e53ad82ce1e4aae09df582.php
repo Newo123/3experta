@@ -1,1 +1,1 @@
-oR�i<?php exit; ?>a:2:{s:7:"content";s:57:"Работаем ежедневно<br>с 9:00 до 20:00";s:15:"key_version_all";i:6;}
+�b�i<?php exit; ?>a:2:{s:7:"content";s:57:"Работаем ежедневно<br>с 9:00 до 20:00";s:15:"key_version_all";i:6;}

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Laminas\Diactoros\Response\JsonResponse;
+use Rareloop\Lumberjack\Facades\Session;
 use Rareloop\Lumberjack\Http\Controller as BaseController;
 use Rareloop\Lumberjack\Email\Facades\Email;
 use App\Forms\ContactForm;
@@ -12,12 +13,33 @@ class MailController extends BaseController
   public function send(ContactForm $form)
   {
     try {
-
       if (empty($_POST)) {
         return new JsonResponse([
           'success' => false,
           'message' => 'Нет данных для обработки'
         ], 400);
+      }
+
+      $lastSend = Session::get('last_send_time', 0);
+      $now = time();
+
+      if ($lastSend && ($now - $lastSend) < 30) {
+        return new JsonResponse([
+          'success' => false,
+          'message' => 'Пожалуйста, подождите 30 секунд перед следующей отправкой'
+        ], 429);
+      }
+
+      Session::put('last_send_time', $now);
+
+      Session::push('send_history', [
+        'time' => date('H:i:s'),
+        'ip' => $_SERVER['REMOTE_ADDR'] ?? ''
+      ]);
+
+      $history = Session::get('send_history', []);
+      if (count($history) > 5) {
+        Session::put('send_history', array_slice($history, -5));
       }
 
       $is_valid = $form->validate($_POST);

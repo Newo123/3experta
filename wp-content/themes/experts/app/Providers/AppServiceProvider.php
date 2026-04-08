@@ -8,6 +8,7 @@ use Rareloop\Lumberjack\Post;
 use Rareloop\Lumberjack\Providers\ServiceProvider;
 use Timber\Timber;
 
+
 class AppServiceProvider extends ServiceProvider
 {
   public function register()
@@ -22,7 +23,6 @@ class AppServiceProvider extends ServiceProvider
     ]);
     add_filter('timber_context', [$this, 'registerContext']);
     add_filter('upload_mimes', [$this, 'uploadMimes']);
-
   }
 
   public function registerContext($context)
@@ -46,6 +46,8 @@ class AppServiceProvider extends ServiceProvider
     $context['agreement'] = get_field('site_agreement', 'options');
     $context['telegram'] = $this->extractTelegram($context['socials']);
     $context['whatsapp'] = $this->extractWhatsapp($context['socials']);
+    $context['csrf_token'] = session();
+
     return $context;
   }
 
