@@ -1,5 +1,5 @@
 {% if services %}
-	<section class="services" id="services">
+	<section class="services {% if themes %} services_{{ themes }} {% endif %}" id="services">
 		<div class="services__body container section-padding">
 			<h2 class="services__title section-title">
 				{{ title }}

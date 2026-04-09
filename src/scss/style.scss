@@ -761,6 +761,9 @@ Services
       }
     }
   }
+  &_dark &__cards-top {
+    border-bottom: none;
+  }
 
   &__card-title {
     display: flex;
@@ -796,6 +799,10 @@ Services
   }
   &_dark &__card-bottom {
     background-color: #c2a75a;
+
+    svg {
+      color: #fff;
+    }
   }
 
   &__card-link {
