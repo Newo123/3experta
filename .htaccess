@@ -153,6 +153,9 @@
 
 
 
+
+
+
 # BEGIN W3TC AVIF
 <IfModule mod_mime.c>
     AddType image/avif .avif

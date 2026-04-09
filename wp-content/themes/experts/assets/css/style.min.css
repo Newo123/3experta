@@ -1411,6 +1411,9 @@ Services
     padding: 20px;
   }
 }
+.services_dark .services__cards-top {
+  border-bottom: none;
+}
 .services__card-title {
   display: flex;
   align-items: center;
@@ -1443,6 +1446,9 @@ Services
 }
 .services_dark .services__card-bottom {
   background-color: #c2a75a;
+}
+.services_dark .services__card-bottom svg {
+  color: #fff;
 }
 .services__card-link {
   display: flex;

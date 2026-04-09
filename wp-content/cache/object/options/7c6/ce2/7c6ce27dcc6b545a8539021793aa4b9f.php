@@ -1,1 +1,1 @@
-¥gÖi<?php exit; ?>a:2:{s:7:"content";s:102:"a:3:{s:5:"title";s:8:"whatsapp";s:3:"url";s:25:"https://wa.me/79272447719";s:6:"target";s:6:"_blank";}";s:15:"key_version_all";i:6;}
+Œ¥×i<?php exit; ?>a:2:{s:7:"content";s:102:"a:3:{s:5:"title";s:8:"whatsapp";s:3:"url";s:25:"https://wa.me/79272447719";s:6:"target";s:6:"_blank";}";s:15:"key_version_all";i:7;}
